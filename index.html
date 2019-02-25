@@ -13,21 +13,22 @@
       <header class="header">
         <h1 class="header-app-title">vuePics</h1>
       </header>
+      <div class='main-display-container'>
+        <div class='main-display-grid'>
 
-      <div class='main-display'>
+          <div class='main-image-view'>
+            <img class='main-image' v-bind:src="selectedImg">
+          </div>
 
-      <div class='main-image-view'>
-        <img class='main-image' v-bind:src="selectedImg">
-      </div>
+          <div class="image-selection-menu">
+            <h3 class="collection-title">Results for {{ searchField}}</h3>
 
-      <div class="image-selection-menu">
-        <h3 class="collection-title">Results for {{ searchField}}</h3>
-
-        <div class="collection-images-container">
-          <img class='collection-image' v-for="image in imagesArr" v-bind:src="image.urls.raw + '&h=100'" v-on:click='onCollectionImgClick'/>
+            <div class="collection-images-container">
+              <img class='collection-image' v-for="image in imagesArr" v-bind:src="image.urls.raw + '&h=100'" v-on:click='onCollectionImgClick'/>
+            </div>
+          </div>
         </div>
       </div>
-     </div>
 
      <form class="search-form" v-on:submit.prevent='submitSearch'>
        <input class='search-input' type="search" name="image-search" placeholder="Search..." v-model='searchField'>
