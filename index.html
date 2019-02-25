@@ -5,30 +5,35 @@
   <title>vuePics</title>
 </head>
 <body class='body'>
-
-  <header class="header">
-    <h1 class="header-app-title">vuePics</h1>
-  </header>
-
   <div id='app'>
-    <div class='main-display'>
+    <div class="background-image" v-bind:style="{ backgroundImage: 'url(' + selectedImg + ')' }"></div>
+
+    <div id='content'>
+
+      <header class="header">
+        <h1 class="header-app-title">vuePics</h1>
+      </header>
+
+      <div class='main-display'>
 
       <div class='main-image-view'>
         <img class='main-image' v-bind:src="selectedImg">
       </div>
 
       <div class="image-selection-menu">
-        <h3 class="collection-title">Results for {{ searchField }}</h3>
+        <h3 class="collection-title">Results for {{ searchField}}</h3>
+
         <div class="collection-images-container">
           <img class='collection-image' v-for="image in imagesArr" v-bind:src="image.urls.raw + '&h=100'" v-on:click='onCollectionImgClick'/>
         </div>
       </div>
-    </div>
+     </div>
 
-    <form class="search-form" v-on:submit.prevent='submitSearch'>
-      <input class='search-input' type="search" name="image-search" placeholder="Search..." v-model='searchField'>
-      <button class="search-submit-btn" type="submit"></button>    
-    </form>
+     <form class="search-form" v-on:submit.prevent='submitSearch'>
+       <input class='search-input' type="search" name="image-search" placeholder="Search..." v-model='searchField'>
+       <button class="search-submit-btn" type="submit"></button>    
+     </form>
+    </div>
   </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script><script src='main.js' type="text/javascript"></script>
