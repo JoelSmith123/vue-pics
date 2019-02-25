@@ -1,0 +1,43 @@
+.main-display {
+  background-color: grey;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  height: 500px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.main-image-view {
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.image-selection-menu {
+  border: 2px solid black;
+  box-sizing: border;
+  padding: 20px;
+}
+
+.collection-title {
+  margin-top: 0;
+}
+
+.collection-images-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.example-image {
+  background-color: black;
+  height: 100px;
+}
+
+.search-input {
+  border: 2px solid black;
+  display: block;
+  font-size: 1rem;
+  height: 50px;
+  margin: 20px auto 0;
+  width: 80%;
+}

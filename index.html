@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="main.css">
   <title>vuePics</title>
 </head>
 <body>
 
-  <header>
-    <h1>VuePics</h1>
+  <header class="header">
+    <h1 class="header-app-title">VuePics</h1>
   </header>
 
   <div class='main-display'>
@@ -17,13 +18,19 @@
     <div class="image-selection-menu">
       <h3 class="collection-title">Results for "search..."</h3>
       <div class="collection-images-container">
-        
+        <div class='example-image'></div>
+        <div class='example-image'></div>
+        <div class='example-image'></div>
+        <div class='example-image'></div>
+        <div class='example-image'></div>
+        <div class='example-image'></div>
       </div>
     </div>
   </div>
 
-  <input type="search" name="image-search" placeholder="Search...">
+  <input class='search-input' type="search" name="image-search" placeholder="Search...">
 
-
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src='main.js' type="text/javascript"></script>
 </body>
 </html>
