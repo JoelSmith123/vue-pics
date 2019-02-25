@@ -1,3 +1,7 @@
+.body {
+  overflow: hidden;
+}
+
 .main-display {
   background-color: grey;
   display: grid;
@@ -26,6 +30,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  height: 400px;
+  overflow: scroll;
 }
 
 .example-image {
