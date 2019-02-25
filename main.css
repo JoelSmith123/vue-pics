@@ -12,8 +12,16 @@
 }
 
 .main-image-view {
+  align-items: center;
   border: 2px solid black;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.main-image {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .image-selection-menu {
@@ -32,11 +40,6 @@
   grid-gap: 20px;
   height: 400px;
   overflow: scroll;
-}
-
-.example-image {
-  background-color: black;
-  height: 100px;
 }
 
 .search-form {

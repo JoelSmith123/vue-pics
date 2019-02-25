@@ -14,14 +14,13 @@
     <div class='main-display'>
 
       <div class='main-image-view'>
+        <img class='main-image' v-bind:src="selectedImg">
       </div>
 
       <div class="image-selection-menu">
         <h3 class="collection-title">Results for "search..."</h3>
         <div class="collection-images-container">
-          <div class='example-image' v-for="image in imagesArr">
-            <img v-bind:src="image.urls.raw + '&w=200&h=100'"/>
-          </div>
+          <img class='collection-image' v-for="image in imagesArr" v-bind:src="image.urls.raw + '&h=100'" v-on:click='onCollectionImgClick'/>
         </div>
       </div>
     </div>
