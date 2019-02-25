@@ -18,7 +18,7 @@
       </div>
 
       <div class="image-selection-menu">
-        <h3 class="collection-title">Results for "search..."</h3>
+        <h3 class="collection-title">Results for {{ searchField }}</h3>
         <div class="collection-images-container">
           <img class='collection-image' v-for="image in imagesArr" v-bind:src="image.urls.raw + '&h=100'" v-on:click='onCollectionImgClick'/>
         </div>
