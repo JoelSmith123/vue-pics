@@ -18,11 +18,18 @@ var app = new Vue({
 
   methods: {
     submitSearch: function () {
+      this.imageDescription = ''
       this.images = true
       let url = `https://api.unsplash.com/search/photos?query=${this.searchField}&client_id=${this.apiKey}`
       this.fetchImagesFromApi(url)
       this.searchFieldDisplay = this.searchField
-      this.searchField = ''
+    },
+
+    showNoResultsError: function () {
+      this.describe = true
+      this.imageDescription = 'Sorry, there weren\'t any results'
+      this.searchFieldDisplay = this.searchField
+      this.imagesArr = []
     },
 
     onCollectionImgClick: function (event) {
@@ -33,13 +40,13 @@ var app = new Vue({
     fetchImagesFromApi: function (url) {
       fetch(url)
         .then(response => response.json())
-        .then(images => images.results ? this.imagesArr = images.results : this.imagesArr = images)
+        .then(images => images.results ? images.results[0] ? this.imagesArr = images.results : this.showNoResultsError() : this.imagesArr = images)
         .then(() => this.selectedImg = this.imagesArr[0].urls.raw)
         .catch(error => console.log(error))     
     },
 
     updateImageDescription: function (event) {
-      this.describe = !this.describe
+      this.describe = true
       this.imageDescription = event.target.alt
     }
   }

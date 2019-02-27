@@ -36,7 +36,7 @@
                    v-bind:src="image.urls.raw + '&h=100'" 
                    v-on:click='onCollectionImgClick' 
                    v-on:mouseover='updateImageDescription' 
-                   v-on:mouseleave='describe = !describe' 
+                   v-on:mouseleave='describe = false' 
                    v-bind:alt="image.description"/>
             </div>
           </div>
