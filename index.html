@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="main.css">
   <title>vuePics</title>
 </head>
@@ -13,6 +14,7 @@
       <header class="header">
         <h1 class="header-app-title">vuePics</h1>
       </header>
+
       <div class='main-display-container'>
         <div class='main-display-grid'>
 
@@ -21,10 +23,10 @@
           </div>
 
           <div class="image-selection-menu">
-            <h3 class="collection-title">Results for {{ searchField}}</h3>
+            <h3 class="collection-title">Images of {{ searchFieldDisplay}}</h3>
 
             <div class="collection-images-container">
-              <img class='collection-image' v-for="image in imagesArr" v-bind:src="image.urls.raw + '&h=100'" v-on:click='onCollectionImgClick'/>
+              <img class='collection-image' v-for="image in imagesArr" v-bind:src="image.urls.raw + '&h=100'" v-on:click='onCollectionImgClick' v-bind:alt="image.description"/>
             </div>
           </div>
         </div>
@@ -32,7 +34,7 @@
 
      <form class="search-form" v-on:submit.prevent='submitSearch'>
        <input class='search-input' type="search" name="image-search" placeholder="Search..." v-model='searchField'>
-       <button class="search-submit-btn" type="submit"></button>    
+       <button class="search-submit-btn" type="submit"><i class="fas fa-search"></i></button>    
      </form>
     </div>
   </div>
