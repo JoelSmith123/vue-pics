@@ -34,8 +34,10 @@
 }
 
 .header-app-title {
+  color: white;
+  font-size: 3rem;
   margin: 0;
-  padding: 20px 0 20px 10px;
+  padding: 20px 0 20px 40px;
 }
 
 .fill-space {
@@ -73,8 +75,19 @@
 
 .collection-title {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+.image-description-container {
+  color: white;
+  height: 30px;
+}
+
+.image-description {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .collection-images-container {

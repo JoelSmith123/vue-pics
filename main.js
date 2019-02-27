@@ -6,7 +6,9 @@ var app = new Vue({
     searchFieldDisplay: '',
     imagesArr: [],
     selectedImg: '',
-    images: false
+    images: false,
+    describe: false,
+    imageDescription: ''
   },
   mounted: function () {
     this.searchFieldDisplay = 'Micro Worlds'
@@ -34,6 +36,11 @@ var app = new Vue({
         .then(images => images.results ? this.imagesArr = images.results : this.imagesArr = images)
         .then(() => this.selectedImg = this.imagesArr[0].urls.raw)
         .catch(error => console.log(error))     
+    },
+
+    updateImageDescription: function (event) {
+      this.describe = !this.describe
+      this.imageDescription = event.target.alt
     }
   }
 })

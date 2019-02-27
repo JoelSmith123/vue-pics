@@ -26,8 +26,18 @@
           <div class="image-selection-menu">
             <h3 class="collection-title">Images of {{ searchFieldDisplay}}</h3>
 
+            <div class="image-description-container">
+              <h4 v-if='describe' class='image-description'>{{ imageDescription }}</h4>
+            </div>
+
             <div class="collection-images-container">
-              <img class='collection-image' v-for="image in imagesArr" v-bind:src="image.urls.raw + '&h=100'" v-on:click='onCollectionImgClick' v-bind:alt="image.description"/>
+              <img class='collection-image' 
+                   v-for="image in imagesArr" 
+                   v-bind:src="image.urls.raw + '&h=100'" 
+                   v-on:click='onCollectionImgClick' 
+                   v-on:mouseover='updateImageDescription' 
+                   v-on:mouseleave='describe = !describe' 
+                   v-bind:alt="image.description"/>
             </div>
           </div>
         </div>
