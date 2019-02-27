@@ -3,6 +3,7 @@ vuePics displays search results for photos from the Unsplash API. This project w
 
 ## Built with
 * Vue.js
+* Unsplash API
 * HTML
 * CSS3
 
