@@ -56,7 +56,6 @@
   grid-template-columns: auto auto;
   max-height: 500px;
   margin: auto;
-
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
@@ -117,7 +116,6 @@
 }
 
 .search-input {
-  /*background-color:rgba(0, 0, 0, 0.2);*/
   background-color: transparent;
   border: none;
   border-bottom: 2px solid black;
@@ -125,7 +123,6 @@
   color: white;
   font-size: 1.5rem;
   height: 100%;
-  padding: 10px;
   width: 100%;
 }
 
@@ -134,7 +131,6 @@
 }
 
 .search-submit-btn {
-  background-color:rgba(0, 0, 0, 0.2);
   background-color: transparent;  
   border: none;
   border-bottom: 2px solid black;
@@ -158,3 +154,4 @@
 .fa-search {
   font-size: 1rem;
 }
+
