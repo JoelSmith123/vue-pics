@@ -24,6 +24,7 @@ var app = new Vue({
       let url = `https://api.unsplash.com/search/photos?query=${this.searchField}&client_id=${this.apiKey}`
       this.fetchImagesFromApi(url)
       this.searchFieldDisplay = this.searchField
+      this.searchField = ''
     },
 
     showNoResultsError: function () {
