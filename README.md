@@ -1,5 +1,6 @@
 # vuePics
 vuePics displays search results for photos from the Unsplash API. This project was built to teach myself Vue.js. 
+
 [View deployment](https://joelsmith123.github.io/vue-pics/)
 
 ## Built with
