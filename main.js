@@ -6,6 +6,7 @@ var app = new Vue({
     searchFieldDisplay: '',
     imagesArr: [],
     selectedImg: '',
+    backgroundImg: '',
     images: false,
     describe: false,
     imageDescription: ''
@@ -33,15 +34,22 @@ var app = new Vue({
     },
 
     onCollectionImgClick: function (event) {
-      const imgSrc = event.target.src.replace('&h=100', '')
+      const imgSrc = event.target.src.replace('&h=100', '&auto=compress')
       this.selectedImg = imgSrc
     },
 
     fetchImagesFromApi: function (url) {
+      this.describe = true
+      this.imageDescription = 'loading...'
       fetch(url)
         .then(response => response.json())
-        .then(images => images.results ? images.results[0] ? this.imagesArr = images.results : this.showNoResultsError() : this.imagesArr = images)
+        .then(images => images.results ? 
+                          images.results[0] ? this.imagesArr = images.results
+                            : this.showNoResultsError() 
+                          : this.imagesArr = images)
         .then(() => this.selectedImg = this.imagesArr[0].urls.raw)
+        .then(() => this.loading = '')
+        .then(() => this.describe = false)
         .catch(error => console.log(error))     
     },
 
