@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <title>vuePics</title>
+</head>
+<body class='body'>
+  <div id='app'>
+    <div class="background-image" v-bind:style="{ backgroundImage: 'url(' + selectedImg + ')' }"></div>
+
+    <div id='content'>
+
+      <header class="header">
+        <h1 class="header-app-title">vuePics</h1>
+      </header>
+
+      <div class='main-display-container'>
+        <div class='main-display-grid'>
+
+          <div class='main-image-view'>
+            <img class='main-image' v-bind:src="selectedImg">
+          </div>
+
+          <div class="image-selection-menu">
+            <h3 class="collection-title">Images of {{ searchFieldDisplay}}</h3>
+
+            <div class="image-description-container">
+              <h4 v-if='describe' class='image-description'>{{ imageDescription }}</h4>
+            </div>
+            <div class="collection-images-container">
+              <img class='collection-image' 
+                   v-for="image in imagesArr" 
+                   v-bind:src="image.urls.raw + '&h=100'" 
+                   v-on:click='onCollectionImgClick' 
+                   v-on:mouseover='updateImageDescription' 
+                   v-on:mouseleave='describe = false' 
+                   v-bind:alt="image.description"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     <form class="search-form" v-on:submit.prevent='submitSearch'>
+       <input class='search-input' type="search" name="image-search" placeholder="Search..." v-model='searchField'>
+       <button class="search-submit-btn" type="submit"><i class="fas fa-search"></i></button>    
+     </form>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script><script src='main.js' type="text/javascript"></script>
+</body>
+</html>
